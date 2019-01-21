@@ -8,11 +8,10 @@
 
 import UIKit
 
-protocol Declarative{
-    func forSelf(_ configureHandler: (Self) -> Void)
-}
-extension Declarative where Self: UIView {
-    func forSelf(_ configureHandler: (Self) -> Void){
+public protocol Declarative{}
+
+extension Declarative where Self: AnyObject {
+    public func forSelf(_ configureHandler: (Self) -> Void){
         configureHandler(self)
     }
 }

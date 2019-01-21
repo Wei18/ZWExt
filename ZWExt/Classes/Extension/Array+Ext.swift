@@ -6,7 +6,7 @@
 //  Copyright © 2018 CocoaPods. All rights reserved.
 //
 
-extension Array {
+public extension Array {
     func insert(by separator: Element?, by increment: Int = 1) -> [Element?] {
         guard count > 0, increment > 0 else { return self }
         let insertIndex = increment + 1

@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol Gradient {
+public protocol Gradient {
     func removeGradient()
     func updateGradientFrame()
     func renderGradient(from: RenderDirection, to: RenderDirection, colors: [UIColor])
 }
 
-enum RenderDirection: Int{
+public enum RenderDirection: Int{
     case top
     case bottom
     case left
@@ -29,7 +29,7 @@ enum RenderDirection: Int{
     }
 }
 
-extension Gradient where Self: CALayer{
+public extension Gradient where Self: CALayer{
     private var gradientLayerKey: String { return "GradientEffectsLayer" }
     
     private var gradient: CALayer?{

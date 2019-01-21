@@ -6,12 +6,11 @@
 //  Copyright © 2019 Wei Cao. All rights reserved.
 //
 
-
 import UIKit
 import RxSwift
 import RxCocoa
 
-extension Reactive where Base: SwipeDismissAnimation {
+public extension Reactive where Base: SwipeDismissAnimation {
     var dismiss: Binder<Bool> {
         return Binder(base) { swipeSelf, value in
             swipeSelf.dismiss(value)
@@ -19,15 +18,19 @@ extension Reactive where Base: SwipeDismissAnimation {
     }
 }
 
-class SwipeDismissAnimation {
+public class SwipeDismissAnimation: ReactiveCompatible {
     private let disposeBag = DisposeBag()
     private weak var view: UIView?
     private weak var vc: UIViewController?
     private lazy var pan = UIPanGestureRecognizer()
     private lazy var defaultFrame = view?.frame
     private var beganPoint: CGPoint!
-    
-    init(_ viewController: UIViewController, contentView aView: UIView?){
+    private init(){}
+}
+
+public extension SwipeDismissAnimation{
+    convenience init(_ viewController: UIViewController, contentView aView: UIView?){
+        self.init()
         self.vc = viewController
         self.view = aView ?? viewController.view
         vc?.view.addGestureRecognizer(pan)
@@ -36,7 +39,18 @@ class SwipeDismissAnimation {
         }).disposed(by: disposeBag)
     }
     
-    private func panGestureRecognizerHandler(_ sender: UIPanGestureRecognizer) {
+    func dismiss(_ animated: Bool = false){
+        guard let defaultFrame = defaultFrame else { return }
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view?.frame.origin.y = defaultFrame.origin.y + defaultFrame.size.height
+        }, completion: { _ in
+            self.vc?.dismiss(animated: animated, completion: nil)
+        })
+    }
+}
+
+private extension SwipeDismissAnimation{
+    func panGestureRecognizerHandler(_ sender: UIPanGestureRecognizer) {
         let touchPoint = sender.location(in: vc?.view?.window)
         switch sender.state{
         case .began:
@@ -58,31 +72,22 @@ class SwipeDismissAnimation {
         }
     }
     
-    private func canBeDismissed(_ value: CGFloat) -> Bool{
+    func canBeDismissed(_ value: CGFloat) -> Bool{
         guard let defaultFrame = defaultFrame else { return true }
         let value0 = defaultFrame.size.height / 3
         let actualValue = max(min(value0, 200), 100)
         return value > actualValue
     }
     
-    private func delta(_ value: CGFloat){
+    func delta(_ value: CGFloat){
         guard let defaultFrame = defaultFrame else { return }
         view?.frame.origin.y = defaultFrame.origin.y + value
     }
     
-    private func reset(){
+    func reset(){
         guard let defaultFrame = defaultFrame else { return }
         UIView.animate(withDuration: 0.3, animations: {
             self.view?.frame.origin.y = defaultFrame.origin.y
-        })
-    }
-    
-    func dismiss(_ animated: Bool = false){
-        guard let defaultFrame = defaultFrame else { return }
-        UIView.animate(withDuration: 0.3, animations: {
-            self.view?.frame.origin.y = defaultFrame.origin.y + defaultFrame.size.height
-        }, completion: { _ in
-            self.vc?.dismiss(animated: animated, completion: nil)
         })
     }
 }

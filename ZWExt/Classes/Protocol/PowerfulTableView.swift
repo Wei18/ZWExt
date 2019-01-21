@@ -8,12 +8,12 @@
 
 import UIKit
 
-protocol PowerfulTableView{
+public protocol PowerfulTableView{
     func setTableHeaderView(_ v: UIView?)
     func setTableFooterView(_ v: UIView?)
 }
 
-extension PowerfulTableView where Self: UITableView{
+public extension PowerfulTableView where Self: UITableView{
     ///dynamic adjust view height
     func setTableHeaderView(_ v: UIView?){
         self.tableHeaderView = v ?? UIView(frame: CGRect(x: 0, y: 0, width: frame.width, height: .leastNonzeroMagnitude))

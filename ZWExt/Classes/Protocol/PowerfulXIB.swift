@@ -8,13 +8,14 @@
 
 import UIKit
 
-protocol PowerfulXIB{
-    func loadNibFromCoder() -> Self?
+public protocol PowerfulXIB{
+    func loadNib() -> Self?
     func awakeFromViewOnwerAfter(using view: UIView?) -> Any?
-    func initializeFromFileOwner()
+    //func initializeFromFileOwner()
+    func addSubviewWithAutoLayout(_ view: UIView)
 }
 
-extension PowerfulXIB where Self: UIView {
+public extension PowerfulXIB where Self: UIView {
     
     /**
      Set false for view custom class to object in xib
@@ -33,17 +34,17 @@ extension PowerfulXIB where Self: UIView {
     
     /**
      ```
-     let view: CustomView = CustomView().loadNibFromCoder()
+     let view: CustomView = CustomView().loadNib()
      ```
      */
-    func loadNibFromCoder() -> Self? {
+    func loadNib() -> Self? {
         return instantiateFromNibHelper(false)
     }
     
     /**
      ```
      override func awakeAfter(using aDecoder: NSCoder) -> Any? {
-     let view = super.awakeAfter(using: aDecoder) as? View
+     let view = super.awakeAfter(using: aDecoder) as? UIView
      return awakeFromViewOnwerAfter(using: view)
      }
      ```
@@ -63,7 +64,10 @@ extension PowerfulXIB where Self: UIView {
         return loaded
     }
     
+    /*
+     //TBD: to be tested
     /**
+     For file owner
      ```
      required init?(coder aDecoder: NSCoder) {
      // for using CustomView in IB
@@ -78,9 +82,18 @@ extension PowerfulXIB where Self: UIView {
      */
     func initializeFromFileOwner(){
         guard let view = instantiateFromNibHelper(true) else { return }
+        addSubviewWithAutoLayout(view)
+    }
+    */
+    
+    func addSubviewWithAutoLayout(_ view: UIView){
+        self.addSubview(view)
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         view.translatesAutoresizingMaskIntoConstraints = true
-        self.addSubview(view)
+        view.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        view.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        view.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        view.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
     }
 }
