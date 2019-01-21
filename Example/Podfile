@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ZWExt_Example' do
+  pod 'ZWExt', :path => '../'
+
+  target 'ZWExt_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
