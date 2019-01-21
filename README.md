@@ -9,7 +9,38 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+## Usage
+
+```swift
+// swift-tools-version:4.0
+
+import ZWExt
+
+//with autolayout
+tableView.setTableHeaderView(CustomView())
+tableView.setTableFooterView(CustomView())
+
+//config customViewSelf
+customView.forSelf{ aView in
+  //code
+}
+
+//SwipeDismissAnimation
+let swipe = SwipeDismissAnimation(_ viewController: UIViewController, contentView aView: UIView?)
+//you can use reactive way by
+Observable.of(true).bind(to: swipe.rx.dismiss).disposed(by: disposeBag)
+//or native 
+swipe.dismis()
+
+//TableHeaderViewZoomAnimation
+let header = TableHeaderViewZoomAnimation(zoomView: UIView, tableView: UITableView)
+//you can use reactive way by
+header.rx.properties
+//or using native and put in delegate
+header.zoom()
+
+```
+
 
 ## Installation
 
