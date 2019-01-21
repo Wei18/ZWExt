@@ -1,15 +1,31 @@
 PODS:
-  - ZWExt (0.1.0)
+  - RxAtomic (4.4.0)
+  - RxCocoa (4.4.0):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.4.0):
+    - RxAtomic (~> 4.4)
+  - ZWExt (0.0.1):
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.2)
 
 DEPENDENCIES:
   - ZWExt (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - RxAtomic
+    - RxCocoa
+    - RxSwift
 
 EXTERNAL SOURCES:
   ZWExt:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ZWExt: 9f1a6511164346d1095c47c23ec932a338de5964
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
+  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+  ZWExt: 510d8d053a8854b4d23bb12c8f07bbac806ec048
 
 PODFILE CHECKSUM: 462d24ba58f21b9f224815abef3d054fdeddf381
 

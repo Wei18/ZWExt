@@ -36,7 +36,7 @@ public extension PowerfulTableView where Self: UITableView{
                          views:   ["v": v])
         
         v.addConstraints(temporaryWidth)
-        v.frame.size.height = v.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
+        v.frame.size.height = v.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
         //Add this line to avoid "Will attempt to recover by breaking constraint"
         v.removeConstraints(temporaryWidth)
     }
