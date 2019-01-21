@@ -1,0 +1,6 @@
+framework module Pods_ZWExt_Tests {
+  umbrella header "Pods-ZWExt_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

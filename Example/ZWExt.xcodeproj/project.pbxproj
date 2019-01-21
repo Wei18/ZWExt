@@ -30,7 +30,7 @@
 /* Begin PBXFileReference section */
 		19BE0C271143362C50D24E5D /* Pods-ZWExt_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZWExt_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZWExt_Example/Pods-ZWExt_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		208793C4F5309C1472B5D9C7 /* Pods_ZWExt_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZWExt_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		385790B2DCA45D4E96DE2E8B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		385790B2DCA45D4E96DE2E8B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		55DDC8F3F1C7C459B19D5E59 /* Pods-ZWExt_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZWExt_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZWExt_Tests/Pods-ZWExt_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* ZWExt_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZWExt_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,9 +42,9 @@
 		607FACE51AFB9204008FA782 /* ZWExt_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZWExt_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		76630DEE792D5691939FEA2A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		76630DEE792D5691939FEA2A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		A03647743429D212625282DA /* Pods_ZWExt_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZWExt_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A986F6A1D1A733C8E313644C /* ZWExt.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = ZWExt.podspec; path = ../ZWExt.podspec; sourceTree = "<group>"; };
+		A986F6A1D1A733C8E313644C /* ZWExt.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ZWExt.podspec; path = ../ZWExt.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D15A1FC6D4495BF761C0B4D6 /* Pods-ZWExt_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZWExt_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZWExt_Tests/Pods-ZWExt_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		F2E8F2BFEB5769061E405456 /* Pods-ZWExt_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZWExt_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZWExt_Example/Pods-ZWExt_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */

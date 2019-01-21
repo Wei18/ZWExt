@@ -1,0 +1,6 @@
+framework module ZWExt {
+  umbrella header "ZWExt-umbrella.h"
+
+  export *
+  module * { export * }
+}
