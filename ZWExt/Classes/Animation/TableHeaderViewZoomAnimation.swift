@@ -29,7 +29,7 @@ public extension Reactive where Base: TableHeaderViewZoomAnimation {
     }
 }
 
-public class TableHeaderViewZoomAnimation {
+public class TableHeaderViewZoomAnimation: ReactiveCompatible {
     private var zoomView: UIView!
     fileprivate var tableView: UITableView!
     private init(){}
