@@ -41,6 +41,27 @@ header.zoom()
 
 ```
 
+## Usage Localizable.swift
+
+```swift
+// swift-tools-version:4.2
+
+enum SomeKey: String, Localizable {
+  case MenuGreeting = "lb_menu_greeting"
+  case HaveBook = "I have %@ books"
+}
+ 
+// Sample
+let menuGreeting: String = SomeKey.MenuGreeting.localized()
+let iHaveBoxes: String = SomeKey.MenuGreeting.localized([3])
+
+/*
+// You also can make it with html.
+SomeKey.CustomCase.localizedHTML()
+SomeKey.CustomCase.localizedHTML([])
+*/
+```
+
 
 ## Installation
 
@@ -50,10 +71,6 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'ZWExt'
 ```
-
-## Author
-
-wei18, 41205mw@gmail.com
 
 ## License
 
